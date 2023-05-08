@@ -68,9 +68,26 @@ body {
   margin: auto;
   max-width: 37.5em;
   height: 40.5em;
-  box-shadow: 0 0 1.25em 0.5em #c3c3c333, 0 0 1em 0.5em #1c9bef;
-  font-family: "Orbitron", sans-serif;
+  box-shadow: 0 0 1.25em 0.5em #c3c3c333;
+  animation: glow 1s ease-in-out infinite;
+  overflow: hidden; /* hide any overflowing content */
+  position: relative; /* set position to enable pseudo elements */
 }
+
+
+/* Add an animation for the glowing border */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px #1c9bef, 0 0 40px #1c9bef, 0 0 6px #1c9bef, 0 0 8px #1c9bef;
+  }
+  50% {
+    box-shadow: 0 0 20px #1c9bef, 0 0 40px #1c9bef, 0 0 8px #1c9bef, 0 0 12px #1c9bef;
+  }
+  65% {
+    box-shadow: 0 0 20px #1c9bef, 0 0 80px #1c9bef, 0 0 16px #1c9bef, 0 0 20px #1c9bef;
+  }
+}
+
 
 
 
@@ -146,18 +163,26 @@ body {
   color: #333;
   font-size: 1em;
   flex-grow: 1;
+  box-shadow: 0 0 0.5em 0.1em #c3c3c333;
+}
+
+.chat-input:focus {
+  outline: none;
+  box-shadow: 0 0 0.5em 0.1em #1c9bef;
 }
 
 .send-button {
   background-color: #1c9bef;
   color: #fff;
   font-size: 1em;
+  font-family: 'Orbitron', sans-serif;
   font-weight: bold;
 }
 
 .clear-chat-button {
   background-color: #ff5252;
   color: #fff;
+  font-family: 'Orbitron', sans-serif;
   font-size: 1em;
   font-weight: bold;
   border: none;
@@ -177,15 +202,7 @@ body {
 }
 
 /* Responsive design for mobile */
-/* @media (max-width: 768px) {
-  .chat-messages {
-    height: calc(100vh - 200px);
-  }
 
-  .message {
-    max-width: 70%;
-  }
-} */
 
 @media (max-width: 500px){
 .chat-messages {
