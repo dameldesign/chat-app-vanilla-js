@@ -1,16 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap");
+
+
 body {
-  background-image: linear-gradient(
-    -83deg,
-    hsl(24, 93%, 39%) 0%,
-    hsl(16deg 80% 61%) 2%,
-    hsl(330, 100%, 50%) 12%,
-    hsl(259deg 100% 15%) 50%,
-    hsl(212deg 100% 25%) 88%,
-    hsl(197deg 100% 30%) 98%,
-    hsl(183deg 79% 36%) 100%,
-    hsl(236, 33%, 43%) 100%
-  );
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-image: url('https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Orbitron', sans-serif;
   height: 100vh;
 }
 
@@ -19,14 +15,28 @@ body {
   padding: 0.625em;
   border-radius: 0.5em;
   cursor: pointer;
+  animation: float 3s ease-in-out infinite;
 }
 
 .button:hover {
   filter: brightness(0.9);
+  animation: float 0.5s ease-in-out infinite;
 }
 
 .button:active {
   transform: translateY(2px);
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
 .person-selector {
@@ -38,15 +48,17 @@ body {
 }
 
 .person-selector-button {
-  width: 100%;
-  background-color: #15202b;
-  color: #fff;
-  font-size: 1.1em;
+  width: 4em;
+  height: 4em;
+  border: 0.25em solid #fff;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center center;
 }
 
+
 .active-person {
-  background: #08529d;
-  box-shadow: 0 0 0.5em 0.1em #c3c3c333;
+  box-shadow: 0 0 1.25em 0.5em #c3c3c333, 0 0 1em 0.5em #1c9bef;
 }
 
 .chat-container {
@@ -56,8 +68,11 @@ body {
   margin: auto;
   max-width: 37.5em;
   height: 40.5em;
-  box-shadow: 0 0 1.25em 0.5em #c3c3c333;
+  box-shadow: 0 0 1.25em 0.5em #c3c3c333, 0 0 1em 0.5em #1c9bef;
+  font-family: "Orbitron", sans-serif;
 }
+
+
 
 .chat-header {
   margin-bottom: 1em;
