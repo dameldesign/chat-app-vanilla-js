@@ -130,7 +130,7 @@ body {
 }
 
 .message-text {
-  font-size: 1em;
+  font-size: .8em;
   margin-bottom: 0.31em;
   word-wrap: break-word;
 }
